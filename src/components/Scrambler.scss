@@ -1,0 +1,60 @@
+.drag-area, .drop-area {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.drag-area {
+  gap: var(--padding-m);
+}
+.drop-area {
+  gap: var(--padding-s);
+  span {
+    line-height: 2em;
+  }
+}
+
+.hanzi-drag, .hanzi-drop {
+  font-size: 1.2rem;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hanzi-drag.empty {
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+button.hanzi-drag {
+  box-sizing: border-box;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+  padding: 0;
+  cursor: grab;
+  touch-action: none;
+
+  &:focus, &:focus-visible {
+    outline: 2px solid var(--color-focus);
+  }
+
+  &.dragging {
+    cursor: grabbing;
+    box-shadow: 2px 2px 5px var(--color-border);
+  }
+}
+
+.hanzi-drop {
+  background-color: gray;
+  box-shadow: inset 2px 2px 1px rgba(0,0,0,0.5);
+  border-right: 1px solid var(--color-background);
+  border-bottom: 1px solid var(--color-background);
+
+  &.over {
+    background-color: var(--color-focus);
+    .hanzi-drag {
+      border-color: var(--color-focus);
+    }
+  }
+}

@@ -1,0 +1,69 @@
+html {
+  --padding-s: 5px;
+  --padding-m: 10px;
+  --padding-l: 20px;
+
+  --color-background: white;
+  --color-offset: #eee;
+  --color-border: gray;
+  --color-focus: blue;
+
+  --color-success: lightgreen;
+  --color-failure: pink;
+
+  font-family: 'Open Sans', sans-serif;
+}
+html, body, #app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-background);
+}
+#app > menu,
+#app > footer {
+  padding: var(--padding-m);
+  margin: 0;
+}
+
+menu {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--padding-m);
+  label {
+    display: flex;
+    gap: var(--padding-s);
+    align-items: center;
+  }
+}
+
+.hanzi-info {
+  position: absolute;
+  padding: var(--padding-m);
+  background: var(--color-background);
+  box-shadow: 2px 2px 5px var(--color-border);
+  > h4, p, ul {
+    margin: 0;
+  }
+  h4 {
+    font-weight: normal;
+  }
+  p {
+    margin: var(--padding-s) 0;
+  }
+  ul {
+    font-size: small;
+    list-style-type: none;
+    position: relative;
+    padding-left: 1em;
+    li:before {
+      position: absolute;
+      content: "-";
+      left: 0;
+    }
+  }
+}
+
+[lang="zh-CN"] {
+  font-family: 'Noto Sans SC', sans-serif;
+  // font-family: 'Noto Serif SC', serif;
+}
